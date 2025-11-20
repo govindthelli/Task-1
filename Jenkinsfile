@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'agent-label'}
+    agent { label 'agent-label' }
 
     stages {
 
@@ -8,18 +8,11 @@ pipeline {
                 sshagent(['ssh-agent']) {
                     sh '''
                         scp -o StrictHostKeyChecking=no ./index.js ubuntu@44.193.202.227:/home/ubuntu/
-                        ssh -o StrictHostKeyChecking=no ubuntu@44.193.202.227 "
-                            pkill -f node || true;
-                            nohup node /home/ubuntu/index.js;
-                        "
-                            
-
-
-                       '''
+                        ssh -o StrictHostKeyChecking=no ubuntu@44.193.202.227 "pkill -f node || true; nohup node /home/ubuntu/index.js &"
+                    '''
                 }
             }
         }
 
     }
-       
 }
