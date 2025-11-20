@@ -9,9 +9,9 @@ pipeline {
                     sh '''
                         scp -o StrictHostKeyChecking=no ./index.js ubuntu@44.193.202.227:/home/ubuntu/
                         ssh -o StrictHostKeyChecking=no ubuntu@44.193.202.227 "
-    pkill -f node || true
-    nohup node /home/ubuntu/index.js &
-"
+                                pkill -f node || true
+                                nohup node /home/ubuntu/index.js &
+                            "
 
 
                        '''
