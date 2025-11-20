@@ -2,7 +2,6 @@ pipeline {
     agent { label 'agent-label' }
 
     stages {
-
         stage('Run Index.js via ssh agent') {
             steps {
                 sshagent(['ssh-agent']) {
@@ -13,6 +12,5 @@ pipeline {
                 }
             }
         }
-
     }
 }
