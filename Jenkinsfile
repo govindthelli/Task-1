@@ -8,9 +8,7 @@ pipeline {
                 sshagent(['ssh-agent']) {
                     sh '''
                         scp -o StrictHostKeyChecking=no ./index.js ubuntu@44.193.202.227:/home/ubuntu/
-                        ssh -o StrictHostKeyChecking=no ubuntu@44.193.202.227 "
-                            node index.js
-                        "
+                        ssh -o StrictHostKeyChecking=no ubuntu@44.193.202.227 "node ./home/ubuntu/index.js"
                        '''
                 }
             }
