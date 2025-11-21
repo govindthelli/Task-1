@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('run') {
             steps {
-                dir("${env.WORKSPACE}") {
+                
                     sh '''
                         pkill -f index.js || true
                         nohup node index.js > output.log 2>&1 &
                     '''
-                }
+                
             }
         }
     }
