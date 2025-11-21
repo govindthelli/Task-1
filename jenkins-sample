@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('run') {
+            steps {
+                sh '''
+                    nohup node index.js 
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            mail to: 'govindthelli560@gmail.com',
+                 subject: "Deployment Status",
+                 body: "Deployment successful"
+        }
+        failure {
+            mail to: 'govindthelli560@gmail.com',
+                 subject: "Deployment Status",
+                 body: "Deployment unsuccessful"
+        }
+    }
+}
