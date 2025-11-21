@@ -5,7 +5,8 @@ pipeline {
         stage('run') {
             steps {
                 sh '''
-                    nohup node index.js
+                    pkill -f index.js || true
+                    nohup node index.js > output.log 2>&1 &
                 '''
             }
         }
