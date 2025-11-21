@@ -14,12 +14,12 @@ pipeline {
 
     post {
         success {
-            mail to: 'govindthelli560@gmail.com',
+            mail to: 'govindthelli69@gmail.com',
                  subject: "Deployment Status",
                  body: "Deployment successful"
         }
         failure {
-            mail to: 'govindthelli560@gmail.com',
+            mail to: 'govindthelli69@gmail.com',
                  subject: "Deployment Status",
                  body: "Deployment unsuccessful"
         }
