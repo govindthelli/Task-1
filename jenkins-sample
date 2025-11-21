@@ -5,7 +5,7 @@ pipeline {
         stage('run') {
             steps {
                 sh '''
-                    docker run --rm -v $PWD:/app python:3.10 python /app/app.py
+                    nohup node index.js
                 '''
             }
         }
