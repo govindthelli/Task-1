@@ -10,6 +10,7 @@ http.createServer((req, res) => {
         </div>
     `);
     res.end();
-}).listen(4000, () => {
-    console.log("Server running on port 4000");
+}).listen(4000, '0.0.0.0', () => {
+  console.log("Server running on port 4000");
 });
+
